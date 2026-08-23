@@ -1,0 +1,21 @@
+import { now, sleep_ms } from "../index.ds"
+
+fn go() {
+  const before = now();
+  const slept = match (sleep_ms(1)) {
+    Ok(v) => true,
+    Err(e) => false
+  };
+  const after = now();
+  if (!slept) {
+    print("fail-sleep");
+    return;
+  }
+  if (after < before) {
+    print("fail-now");
+    return;
+  }
+  print("ok");
+}
+
+go()
