@@ -1,6 +1,6 @@
 // Host-granted time. now() is Date.now; only sleep_ms is a host op.
 
-export fn now(): number {
+export fn now() number {
   let r = unsafe { Date.now() };
   return match (r) {
     Ok(v) => v,

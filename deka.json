@@ -1,8 +1,10 @@
 {
   "name": "@deka/time",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "index.ds",
   "host": {
-    "kinds": ["time"]
+    "kinds": [
+      "time"
+    ]
   }
 }
