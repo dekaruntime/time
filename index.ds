@@ -1,11 +1,10 @@
 // Host-granted time. now() is Date.now; only sleep_ms is a host op.
 
+// Date.now is total: expose the timestamp directly instead of hiding errors as zero.
+summon { total now_ms(): number } from "./shim.mjs"
+
 export fn now() number {
-  let r = unsafe { Date.now() };
-  return match (r) {
-    Ok(v) => v,
-    Err(e) => 0
-  };
+  return now_ms()
 }
 
 export fn sleep_ms(ms: number) {
