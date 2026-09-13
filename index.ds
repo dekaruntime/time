@@ -1,7 +1,7 @@
 // Host-granted time. now() is Date.now; only sleep_ms is a host op.
 
 // Date.now is total: expose the timestamp directly instead of hiding errors as zero.
-summon { total now_ms(): number } from "./shim.mjs"
+summon { total now_ms() number } from "./shim.mjs"
 
 export fn now() number {
   return now_ms()
