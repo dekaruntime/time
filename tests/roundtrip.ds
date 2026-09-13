@@ -1,6 +1,6 @@
 import { now, sleep_ms } from "../index.ds"
 
-summon { total log(message: string): void } from "./log.mjs"
+summon { total log(message: string) void } from "./log.mjs"
 
 fn go() {
   const before = now();
